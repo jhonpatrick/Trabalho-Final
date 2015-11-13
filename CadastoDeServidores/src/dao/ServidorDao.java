@@ -1,0 +1,60 @@
+package dao;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+import model.Servidor;
+
+/**
+ *
+ * @author Lord Devil Hunter
+ */
+public class ServidorDao {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("trabalho-finalPRO");
+        
+        EntityManager em = emf.createEntityManager();
+        
+        public void begin(){
+            em.getTransaction().begin();
+        }
+        
+        public void commit(){
+            em.getTransaction().commit();
+        }
+        public void rollback(){
+            em.getTransaction().rollback();
+        }
+        
+        public void close(){
+            em.close();
+            emf.close();
+        }
+        
+        public void salvar(Servidor s){
+            em.persist(s);
+        }
+        public Servidor pesquisar(long id){
+            return em.find(Servidor.class, id);
+        }
+        public void apagar(Servidor s){
+            begin();
+            em.persist(s);
+            commit();
+        }
+        public void atualizar(Servidor s){
+            begin();
+            em.merge(s);
+            commit();
+        }
+        
+        public List<Servidor> listar(){
+            List<Servidor> ls = new ArrayList<Servidor>();
+            Query query = em.createQuery("select s from Servidor s");
+            return ls = query.getResultList();
+        }
+        
+        
+}
