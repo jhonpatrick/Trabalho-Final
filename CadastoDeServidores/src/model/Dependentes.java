@@ -12,6 +12,7 @@ import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 /**
  *
@@ -21,10 +22,13 @@ import javax.persistence.Id;
 public class Dependentes {
     
     
-    
+    //criando o id no persistence
     @Id
+    //colocando o id pra gerar automático
     @GeneratedValue
     private long id;
+    //criando relaçções entres as tabelas 
+    @ManyToMany(mappedBy = "dependentesServ")
     private Servidor servidor;
     private String nomeDependente;
     private Date dataNascimentoDependente;

@@ -6,10 +6,13 @@
 package model;
 
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Logger;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -22,177 +25,338 @@ public class Servidor {
     //criando ob do tipo das Classes
     //falta criar o relacionameno entre as tabelas 
     //criando tabelas que vão se relcionar com a tabela Servidor
-    
-    private Endereco endereco_serv;
-    private Documentos doc_serv;
-    private Dependentes dependentes;
-    private Cargo cargo;
-    private Escolaridade grau_instrucao;
+    @ManyToOne
+    private Endereco enderecoServ;
+    @ManyToMany
+    private List<Dependentes> dependentesServ;
 
+    //criando o atributo id da tabela
     @Id
+    //gerando automático
     @GeneratedValue
-    private long id;
+    private long idServ;
 
-    private String nome_serv;
-    private char sexo_serv;
-    private Date data_nasc_serv;
-    private String estado_civil_serv;
-    private String naturalidade_serv;
-    private boolean deficinte_fisico = false;
-    private String nome_pai;
-    private String nome_mae;
+    private String grauInstrucaoServ;
+    private String areaFormacaoServ;
+    private String nomeServ;
+    private char sexoServ;
+    private Date dataNascServ;
+    private String estadoCivilServ;
+    private String naturalidadeServ;
+    private boolean deficinteFisico;
+    private String nomePaiServ;
+    private String nomeMaeServ;
 
-    public Servidor(Endereco endereco_serv, Documentos doc_serv, Dependentes dependentes, Cargo cargo, Escolaridade grau_instrução, long id, String nome_serv, char sexo_serv, Date data_nasc_serv, String estado_civil_serv, String naturalidade_serv, String nome_pai, String nome_mae) {
-        this.endereco_serv = endereco_serv;
-        this.doc_serv = doc_serv;
-        this.dependentes = dependentes;
-        this.cargo = cargo;
-        this.grau_instrucao = grau_instrução;
-        this.id = id;
-        this.nome_serv = nome_serv;
-        this.sexo_serv = sexo_serv;
-        this.data_nasc_serv = data_nasc_serv;
-        this.estado_civil_serv = estado_civil_serv;
-        this.naturalidade_serv = naturalidade_serv;
-        this.nome_pai = nome_pai;
-        this.nome_mae = nome_mae;
-    }
-
-    public Servidor(Endereco endereco_serv, Documentos doc_serv, Dependentes dependentes, Cargo cargo, Escolaridade grau_instrução, String nome_serv, char sexo_serv, Date data_nasc_serv, String estado_civil_serv, String naturalidade_serv, String nome_pai, String nome_mae) {
-        this.endereco_serv = endereco_serv;
-        this.doc_serv = doc_serv;
-        this.dependentes = dependentes;
-        this.cargo = cargo;
-        this.grau_instrucao = grau_instrução;
-        this.nome_serv = nome_serv;
-        this.sexo_serv = sexo_serv;
-        this.data_nasc_serv = data_nasc_serv;
-        this.estado_civil_serv = estado_civil_serv;
-        this.naturalidade_serv = naturalidade_serv;
-        this.nome_pai = nome_pai;
-        this.nome_mae = nome_mae;
-    }
+    private String cargoServ;
+    private Date dataEmisaoServ;
+    
+    private long numCtpsServ;
+    private long serieCtpsServ;
+    private Date dataEmissaoCtpsServ;
+    private long numPasepServ;
+    private Date dataCadastroPasepServ;
+    private long identidadeServ;
+    private String orgaoIdentidadeServ;
+    private Date dataEmissaoIdentidadeServ;
+    private long numTituloServ;
+    private long numSessaoTituloServ;
+    private String zonaTituloServ;
+    private int numCpfServ;
+    private int certMilitarServ;
 
     public Servidor() {
         super();
     }
 
-    public Endereco getEndereco_serv() {
-        return endereco_serv;
+    public Servidor(Endereco endereco_serv, List<Dependentes> dependentes, long idServ, String grau_instrucao, String area_formacao, String nomeServ, char sexoServ, Date dataNascServ, String estadoCivilServ, String naturalidadeServ, boolean deficinteFisico, String nomePaiServ, String nomeMaeServ, String cargoServ, Date dataEmisaoServ, long numCtpsServ, long serieCtpsServ, Date dataEmissaoCtpsServ, long numPasepServ, Date dataCadastroPasepServ, long identidadeServ, String orgaoIdentidadeServ, Date dataEmissaoIdentidadeServ, long numTituloServ, long numSessaoTituloServ, String zonaTituloServ, int numCpfServ, int certMilitarServ) {
+        this.enderecoServ = endereco_serv;
+        this.dependentesServ = dependentes;
+        this.idServ = idServ;
+        this.grauInstrucaoServ = grau_instrucao;
+        this.areaFormacaoServ = area_formacao;
+        this.nomeServ = nomeServ;
+        this.sexoServ = sexoServ;
+        this.dataNascServ = dataNascServ;
+        this.estadoCivilServ = estadoCivilServ;
+        this.naturalidadeServ = naturalidadeServ;
+        this.deficinteFisico = deficinteFisico;
+        this.nomePaiServ = nomePaiServ;
+        this.nomeMaeServ = nomeMaeServ;
+        this.cargoServ = cargoServ;
+        this.dataEmisaoServ = dataEmisaoServ;
+        this.numCtpsServ = numCtpsServ;
+        this.serieCtpsServ = serieCtpsServ;
+        this.dataEmissaoCtpsServ = dataEmissaoCtpsServ;
+        this.numPasepServ = numPasepServ;
+        this.dataCadastroPasepServ = dataCadastroPasepServ;
+        this.identidadeServ = identidadeServ;
+        this.orgaoIdentidadeServ = orgaoIdentidadeServ;
+        this.dataEmissaoIdentidadeServ = dataEmissaoIdentidadeServ;
+        this.numTituloServ = numTituloServ;
+        this.numSessaoTituloServ = numSessaoTituloServ;
+        this.zonaTituloServ = zonaTituloServ;
+        this.numCpfServ = numCpfServ;
+        this.certMilitarServ = certMilitarServ;
     }
 
-    public void setEndereco_serv(Endereco endereco_serv) {
-        this.endereco_serv = endereco_serv;
+    public Servidor(Endereco endereco_serv, List<Dependentes> dependentes, String grau_instrucao, String area_formacao, String nomeServ, char sexoServ, Date dataNascServ, String estadoCivilServ, String naturalidadeServ, boolean deficinteFisico, String nomePaiServ, String nomeMaeServ, String cargoServ, Date dataEmisaoServ, long numCtpsServ, long serieCtpsServ, Date dataEmissaoCtpsServ, long numPasepServ, Date dataCadastroPasepServ, long identidadeServ, String orgaoIdentidadeServ, Date dataEmissaoIdentidadeServ, long numTituloServ, long numSessaoTituloServ, String zonaTituloServ, int numCpfServ, int certMilitarServ) {
+        this.enderecoServ = endereco_serv;
+        this.dependentesServ = dependentes;
+        this.grauInstrucaoServ = grau_instrucao;
+        this.areaFormacaoServ = area_formacao;
+        this.nomeServ = nomeServ;
+        this.sexoServ = sexoServ;
+        this.dataNascServ = dataNascServ;
+        this.estadoCivilServ = estadoCivilServ;
+        this.naturalidadeServ = naturalidadeServ;
+        this.deficinteFisico = deficinteFisico;
+        this.nomePaiServ = nomePaiServ;
+        this.nomeMaeServ = nomeMaeServ;
+        this.cargoServ = cargoServ;
+        this.dataEmisaoServ = dataEmisaoServ;
+        this.numCtpsServ = numCtpsServ;
+        this.serieCtpsServ = serieCtpsServ;
+        this.dataEmissaoCtpsServ = dataEmissaoCtpsServ;
+        this.numPasepServ = numPasepServ;
+        this.dataCadastroPasepServ = dataCadastroPasepServ;
+        this.identidadeServ = identidadeServ;
+        this.orgaoIdentidadeServ = orgaoIdentidadeServ;
+        this.dataEmissaoIdentidadeServ = dataEmissaoIdentidadeServ;
+        this.numTituloServ = numTituloServ;
+        this.numSessaoTituloServ = numSessaoTituloServ;
+        this.zonaTituloServ = zonaTituloServ;
+        this.numCpfServ = numCpfServ;
+        this.certMilitarServ = certMilitarServ;
     }
 
-    public Documentos getDoc_serv() {
-        return doc_serv;
+    public Endereco getEnderecoServ() {
+        return enderecoServ;
     }
 
-    public void setDoc_serv(Documentos doc_serv) {
-        this.doc_serv = doc_serv;
+    public void setEnderecoServ(Endereco enderecoServ) {
+        this.enderecoServ = enderecoServ;
     }
 
-    public Dependentes getDependentes() {
-        return dependentes;
+    public List<Dependentes> getDependentesServ() {
+        return dependentesServ;
     }
 
-    public void setDependentes(Dependentes dependentes) {
-        this.dependentes = dependentes;
+    public void setDependentesServ(List<Dependentes> dependentesServ) {
+        this.dependentesServ = dependentesServ;
     }
 
-    public Cargo getCargo() {
-        return cargo;
+    public long getIdServ() {
+        return idServ;
     }
 
-    public void setCargo(Cargo cargo) {
-        this.cargo = cargo;
+    public void setIdServ(long idServ) {
+        this.idServ = idServ;
     }
 
-    public Escolaridade getGrau_instrucao() {
-        return grau_instrucao;
+    public String getGrauInstrucaoServ() {
+        return grauInstrucaoServ;
     }
 
-    public void setGrau_instrucao(Escolaridade grau_instrucao) {
-        this.grau_instrucao = grau_instrucao;
+    public void setGrauInstrucaoServ(String grauInstrucaoServ) {
+        this.grauInstrucaoServ = grauInstrucaoServ;
     }
 
-    public long getId() {
-        return id;
+    public String getArea_formacao() {
+        return areaFormacaoServ;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setArea_formacao(String area_formacao) {
+        this.areaFormacaoServ = area_formacao;
     }
 
-    public String getNome_serv() {
-        return nome_serv;
+    public String getNomeServ() {
+        return nomeServ;
     }
 
-    public void setNome_serv(String nome_serv) {
-        this.nome_serv = nome_serv;
+    public void setNomeServ(String nomeServ) {
+        this.nomeServ = nomeServ;
     }
 
-    public char getSexo_serv() {
-        return sexo_serv;
+    public char getSexoServ() {
+        return sexoServ;
     }
 
-    public void setSexo_serv(char sexo_serv) {
-        this.sexo_serv = sexo_serv;
+    public void setSexoServ(char sexoServ) {
+        this.sexoServ = sexoServ;
     }
 
-    public Date getData_nasc_serv() {
-        return data_nasc_serv;
+    public Date getDataNascServ() {
+        return dataNascServ;
     }
 
-    public void setData_nasc_serv(Date data_nasc_serv) {
-        this.data_nasc_serv = data_nasc_serv;
+    public void setDataNascServ(Date dataNascServ) {
+        this.dataNascServ = dataNascServ;
     }
 
-    public String getEstado_civil_serv() {
-        return estado_civil_serv;
+    public String getEstadoCivilServ() {
+        return estadoCivilServ;
     }
 
-    public void setEstado_civil_serv(String estado_civil_serv) {
-        this.estado_civil_serv = estado_civil_serv;
+    public void setEstadoCivilServ(String estadoCivilServ) {
+        this.estadoCivilServ = estadoCivilServ;
     }
 
-    public String getNaturalidade_serv() {
-        return naturalidade_serv;
+    public String getNaturalidadeServ() {
+        return naturalidadeServ;
     }
 
-    public void setNaturalidade_serv(String naturalidade_serv) {
-        this.naturalidade_serv = naturalidade_serv;
+    public void setNaturalidadeServ(String naturalidadeServ) {
+        this.naturalidadeServ = naturalidadeServ;
     }
 
-    public boolean isDeficinte_fisico() {
-        return deficinte_fisico;
+    public boolean isDeficinteFisico() {
+        return deficinteFisico;
     }
 
-    public void setDeficinte_fisico(boolean deficinte_fisico) {
-        this.deficinte_fisico = deficinte_fisico;
+    public void setDeficinteFisico(boolean deficinteFisico) {
+        this.deficinteFisico = deficinteFisico;
     }
 
-    public String getNome_pai() {
-        return nome_pai;
+    public String getNomePaiServ() {
+        return nomePaiServ;
     }
 
-    public void setNome_pai(String nome_pai) {
-        this.nome_pai = nome_pai;
+    public void setNomePaiServ(String nomePaiServ) {
+        this.nomePaiServ = nomePaiServ;
     }
 
-    public String getNome_mae() {
-        return nome_mae;
+    public String getNomeMaeServ() {
+        return nomeMaeServ;
     }
 
-    public void setNome_mae(String nome_mae) {
-        this.nome_mae = nome_mae;
+    public void setNomeMaeServ(String nomeMaeServ) {
+        this.nomeMaeServ = nomeMaeServ;
+    }
+
+    public String getCargoServ() {
+        return cargoServ;
+    }
+
+    public void setCargoServ(String cargoServ) {
+        this.cargoServ = cargoServ;
+    }
+
+    public Date getDataEmisaoServ() {
+        return dataEmisaoServ;
+    }
+
+    public void setDataEmisaoServ(Date dataEmisaoServ) {
+        this.dataEmisaoServ = dataEmisaoServ;
+    }
+
+    public long getNumCtpsServ() {
+        return numCtpsServ;
+    }
+
+    public void setNumCtpsServ(long numCtpsServ) {
+        this.numCtpsServ = numCtpsServ;
+    }
+
+    public long getSerieCtpsServ() {
+        return serieCtpsServ;
+    }
+
+    public void setSerieCtpsServ(long serieCtpsServ) {
+        this.serieCtpsServ = serieCtpsServ;
+    }
+
+    public Date getDataEmissaoCtpsServ() {
+        return dataEmissaoCtpsServ;
+    }
+
+    public void setDataEmissaoCtpsServ(Date dataEmissaoCtpsServ) {
+        this.dataEmissaoCtpsServ = dataEmissaoCtpsServ;
+    }
+
+    public long getNumPasepServ() {
+        return numPasepServ;
+    }
+
+    public void setNumPasepServ(long numPasepServ) {
+        this.numPasepServ = numPasepServ;
+    }
+
+    public Date getDataCadastroPasepServ() {
+        return dataCadastroPasepServ;
+    }
+
+    public void setDataCadastroPasepServ(Date dataCadastroPasepServ) {
+        this.dataCadastroPasepServ = dataCadastroPasepServ;
+    }
+
+    public long getIdentidadeServ() {
+        return identidadeServ;
+    }
+
+    public void setIdentidadeServ(long identidadeServ) {
+        this.identidadeServ = identidadeServ;
+    }
+
+    public String getOrgaoIdentidadeServ() {
+        return orgaoIdentidadeServ;
+    }
+
+    public void setOrgaoIdentidadeServ(String orgaoIdentidadeServ) {
+        this.orgaoIdentidadeServ = orgaoIdentidadeServ;
+    }
+
+    public Date getDataEmissaoIdentidadeServ() {
+        return dataEmissaoIdentidadeServ;
+    }
+
+    public void setDataEmissaoIdentidadeServ(Date dataEmissaoIdentidadeServ) {
+        this.dataEmissaoIdentidadeServ = dataEmissaoIdentidadeServ;
+    }
+
+    public long getNumTituloServ() {
+        return numTituloServ;
+    }
+
+    public void setNumTituloServ(long numTituloServ) {
+        this.numTituloServ = numTituloServ;
+    }
+
+    public long getNumSessaoTituloServ() {
+        return numSessaoTituloServ;
+    }
+
+    public void setNumSessaoTituloServ(long numSessaoTituloServ) {
+        this.numSessaoTituloServ = numSessaoTituloServ;
+    }
+
+    public String getZonaTituloServ() {
+        return zonaTituloServ;
+    }
+
+    public void setZonaTituloServ(String zonaTituloServ) {
+        this.zonaTituloServ = zonaTituloServ;
+    }
+
+    public int getNumCpfServ() {
+        return numCpfServ;
+    }
+
+    public void setNumCpfServ(int numCpfServ) {
+        this.numCpfServ = numCpfServ;
+    }
+
+    public int getCertMilitarServ() {
+        return certMilitarServ;
+    }
+
+    public void setCertMilitarServ(int certMilitarServ) {
+        this.certMilitarServ = certMilitarServ;
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 97 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 71 * hash + (int) (this.idServ ^ (this.idServ >>> 32));
         return hash;
     }
 
@@ -205,7 +369,7 @@ public class Servidor {
             return false;
         }
         final Servidor other = (Servidor) obj;
-        if (this.id != other.id) {
+        if (this.idServ != other.idServ) {
             return false;
         }
         return true;
@@ -213,12 +377,17 @@ public class Servidor {
 
     @Override
     public String toString() {
-        return "Servidor{ \n" + "endereco_serv=" + endereco_serv + 
-                ", doc_serv=" + doc_serv + ", dependentes=" + dependentes + 
-                ", cargo=" + cargo + ", grau_instrucao=" + grau_instrucao + 
-                ", id=" + id + ", nome_serv=" + nome_serv + ", sexo_serv=" + sexo_serv + 
-                ", data_nasc_serv=" + data_nasc_serv + ", estado_civil_serv=" + estado_civil_serv + 
-                ", naturalidade_serv=" + naturalidade_serv + ", deficinte_fisico=" + deficinte_fisico + 
-                ", nome_pai=" + nome_pai + ", nome_mae=" + nome_mae + "\n }";
+        return "Servidor{" + "endereco_serv=" + enderecoServ + ", dependentes=" + dependentesServ + 
+                ", idServ=" + idServ + ", grau_instrucao=" + grauInstrucaoServ + ", area_formacao=" + areaFormacaoServ + 
+                ", nomeServ=" + nomeServ + ", sexoServ=" + sexoServ + ", dataNascServ=" + dataNascServ + 
+                ", estadoCivilServ=" + estadoCivilServ + ", naturalidadeServ=" + naturalidadeServ + 
+                ", deficinteFisico=" + deficinteFisico + ", nomePaiServ=" + nomePaiServ + ", nomeMaeServ=" + nomeMaeServ + 
+                ", cargoServ=" + cargoServ + ", dataEmisaoServ=" + dataEmisaoServ + ", numCtpsServ=" + numCtpsServ + 
+                ", serieCtpsServ=" + serieCtpsServ + ", dataEmissaoCtpsServ=" + dataEmissaoCtpsServ + 
+                ", numPasepServ=" + numPasepServ + ", dataCadastroPasepServ=" + dataCadastroPasepServ + 
+                ", identidadeServ=" + identidadeServ + ", orgaoIdentidadeServ=" + orgaoIdentidadeServ + 
+                ", dataEmissaoIdentidadeServ=" + dataEmissaoIdentidadeServ + ", numTituloServ=" + numTituloServ + 
+                ", numSessaoTituloServ=" + numSessaoTituloServ + ", zonaTituloServ=" + zonaTituloServ + 
+                ", numCpfServ=" + numCpfServ + ", certMilitarServ=" + certMilitarServ + '}';
     }
 }

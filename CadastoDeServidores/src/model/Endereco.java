@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -19,7 +20,10 @@ public class Endereco {
 
     private static final Logger LOG = Logger.getLogger(Endereco.class.getName());
 
+    //criando relações entre as tabelas
+    @OneToMany(mappedBy = "enderecoServ")
     private Servidor servidor;
+    //criando o atributo id no banco e colocando pra ser gerado automático
     @Id @GeneratedValue
     private long id;
     private String UF;
@@ -153,7 +157,9 @@ public class Endereco {
 
     @Override
     public String toString() {
-        return "Endereco{" + "servidor=" + servidor + ", id=" + id + ", UF=" + UF + ", cidade=" + cidade + ", bairro=" + bairro + ", numero=" + numero + ", rua=" + rua + ", email=" + email + ", telefone=" + telefone + '}';
+        return "Endereco{" + "servidor=" + servidor + ", id=" + id + ", UF=" + UF + 
+                ", cidade=" + cidade + ", bairro=" + bairro + ", numero=" + numero + 
+                ", rua=" + rua + ", email=" + email + ", telefone=" + telefone + '}';
     }
 
 }
