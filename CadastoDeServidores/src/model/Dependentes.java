@@ -8,7 +8,8 @@ package model;
 
 
 import java.util.Date;
-import javax.annotation.Generated;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -29,7 +30,7 @@ public class Dependentes {
     private long id;
     //criando relaçções entres as tabelas 
     @ManyToMany(mappedBy = "dependentesServ")
-    private Servidor servidor;
+    private List<Servidor> servidor;
     private String nomeDependente;
     private Date dataNascimentoDependente;
     private String parentesco;
@@ -38,7 +39,7 @@ public class Dependentes {
         super();
     }
 
-    public Dependentes(long id, Servidor servidor, String nomeDependente, Date dataNascimentoDependente, String parentesco) {
+    public Dependentes(long id, List<Servidor> servidor, String nomeDependente, Date dataNascimentoDependente, String parentesco) {
         this.id = id;
         this.servidor = servidor;
         this.nomeDependente = nomeDependente;
@@ -46,7 +47,7 @@ public class Dependentes {
         this.parentesco = parentesco;
     }
 
-    public Dependentes(Servidor servidor, String nomeDependente, Date dataNascimentoDependente, String parentesco) {
+    public Dependentes(List<Servidor> servidor, String nomeDependente, Date dataNascimentoDependente, String parentesco) {
         this.servidor = servidor;
         this.nomeDependente = nomeDependente;
         this.dataNascimentoDependente = dataNascimentoDependente;
@@ -61,11 +62,11 @@ public class Dependentes {
         this.id = id;
     }
 
-    public Servidor getServidor() {
+    public List<Servidor> getServidor() {
         return servidor;
     }
 
-    public void setServidor(Servidor servidor) {
+    public void setServidor(List<Servidor> servidor) {
         this.servidor = servidor;
     }
 
