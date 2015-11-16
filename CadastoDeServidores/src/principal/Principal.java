@@ -5,16 +5,12 @@
  */
 package principal;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
+import dao.ServidorDao;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.swing.JOptionPane;
 
-import sun.text.resources.FormatData;
 import model.Servidor;
 
 /**
@@ -33,20 +29,25 @@ public class Principal {
 				createEntityManagerFactory("trabalho-finalPRO");
 		
 		EntityManager em = emf.createEntityManager();
-		EntityTransaction tx = em.getTransaction();
 		//chamando a class de Servidores
-		tx.begin();
+		
 		Servidor s1 = new Servidor();
 		s1.setArea_formacao("Programação de Softwares");
 		s1.setCargoServ("asdgadg");
 		s1.setCertMilitarServ(58445);
-//		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-//
-//		sdf.format(dataCadastroPasepServ);
-//		String data = "15/11/1995";
-//		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-//		formatter.parse(data);
-//		s1.setDataCadastroPasepServ(formatter);
+		s1.setDataCadastroPisPasepServ("15/11/1995");
+                s1.setSexoServ('M');
+                s1.setDeficinteFisico("Não");
+                
+                ServidorDao servDAO = new ServidorDao();
+                servDAO.begin();
+                servDAO.salvar(s1);
+                
+                JOptionPane.showMessageDialog(null,servDAO.listar(), "Apresentação do Servidor", JOptionPane.PLAIN_MESSAGE);
+                
+                servDAO.commit();
+                servDAO.close();
+                
     }
     
 }

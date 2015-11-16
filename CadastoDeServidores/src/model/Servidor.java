@@ -5,9 +5,8 @@
  */
 package model;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 import javax.persistence.Entity;
@@ -42,25 +41,27 @@ public class Servidor {
 	private String grauInstrucaoServ;
 	private String areaFormacaoServ;
 	private String nomeServ;
+        //Atenção esse atributo SIAPE, será o login para os Servidores entrarem na sua respectiva conta
+        private String SIAPE;
 	private char sexoServ;
-	private Date dataNascServ;
+	private String dataNascServ;
 	private String estadoCivilServ;
 	private String naturalidadeServ;
-	private boolean deficinteFisico;
+	private String deficinteFisico;
 	private String nomePaiServ;
 	private String nomeMaeServ;
 
 	private String cargoServ;
-	private Date dataEmisaoServ;
+	private String dataAdmissaoServ;
 
 	private long numCtpsServ;
 	private long serieCtpsServ;
-	private Date dataEmissaoCtpsServ;
-	private long numPasepServ;
-	private Date dataCadastroPasepServ;
+	private String dataEmissaoCtpsServ;
+	private long numPisPasepServ;
+	private String dataCadastroPisPasepServ;
 	private long identidadeServ;
 	private String orgaoIdentidadeServ;
-	private Date dataEmissaoIdentidadeServ;
+	private String dataEmissaoIdentidadeServ;
 	private long numTituloServ;
 	private long numSessaoTituloServ;
 	private String zonaTituloServ;
@@ -71,20 +72,21 @@ public class Servidor {
 		super();
 	}
 
-	public Servidor(Endereco endereco_serv, List<Dependentes> dependentes,
+	public Servidor(Endereco endereco_serv, String SIAPE,List<Dependentes> dependentes,
 			long idServ, String grau_instrucao, String area_formacao,
-			String nomeServ, char sexoServ, Date dataNascServ,
+			String nomeServ, char sexoServ, String dataNascServ,
 			String estadoCivilServ, String naturalidadeServ,
-			boolean deficinteFisico, String nomePaiServ, String nomeMaeServ,
-			String cargoServ, Date dataEmisaoServ, long numCtpsServ,
-			long serieCtpsServ, Date dataEmissaoCtpsServ, long numPasepServ,
-			Date dataCadastroPasepServ, long identidadeServ,
-			String orgaoIdentidadeServ, Date dataEmissaoIdentidadeServ,
+			String deficinteFisico, String nomePaiServ, String nomeMaeServ,
+			String cargoServ, String dataEmisaoServ, long numCtpsServ,
+			long serieCtpsServ, String dataEmissaoCtpsServ, long numPasepServ,
+			String dataCadastroPasepServ, long identidadeServ,
+			String orgaoIdentidadeServ, String dataEmissaoIdentidadeServ,
 			long numTituloServ, long numSessaoTituloServ,
 			String zonaTituloServ, int numCpfServ, int certMilitarServ) {
 		this.enderecoServ = endereco_serv;
 		this.dependentesServ = dependentes;
-		this.idServ = idServ;
+                this.idServ = idServ;
+		this.SIAPE = SIAPE;
 		this.grauInstrucaoServ = grau_instrucao;
 		this.areaFormacaoServ = area_formacao;
 		this.nomeServ = nomeServ;
@@ -96,12 +98,12 @@ public class Servidor {
 		this.nomePaiServ = nomePaiServ;
 		this.nomeMaeServ = nomeMaeServ;
 		this.cargoServ = cargoServ;
-		this.dataEmisaoServ = dataEmisaoServ;
+		this.dataAdmissaoServ = dataEmisaoServ;
 		this.numCtpsServ = numCtpsServ;
 		this.serieCtpsServ = serieCtpsServ;
 		this.dataEmissaoCtpsServ = dataEmissaoCtpsServ;
-		this.numPasepServ = numPasepServ;
-		this.dataCadastroPasepServ = dataCadastroPasepServ;
+		this.numPisPasepServ = numPasepServ;
+		this.dataCadastroPisPasepServ = dataCadastroPasepServ;
 		this.identidadeServ = identidadeServ;
 		this.orgaoIdentidadeServ = orgaoIdentidadeServ;
 		this.dataEmissaoIdentidadeServ = dataEmissaoIdentidadeServ;
@@ -112,15 +114,15 @@ public class Servidor {
 		this.certMilitarServ = certMilitarServ;
 	}
 
-	public Servidor(Endereco endereco_serv, List<Dependentes> dependentes,
+	public Servidor(Endereco endereco_serv, String SIAPE, List<Dependentes> dependentes,
 			String grau_instrucao, String area_formacao, String nomeServ,
-			char sexoServ, Date dataNascServ, String estadoCivilServ,
-			String naturalidadeServ, boolean deficinteFisico,
+			char sexoServ, String dataNascServ, String estadoCivilServ,
+			String naturalidadeServ, String deficinteFisico,
 			String nomePaiServ, String nomeMaeServ, String cargoServ,
-			Date dataEmisaoServ, long numCtpsServ, long serieCtpsServ,
-			Date dataEmissaoCtpsServ, long numPasepServ,
-			Date dataCadastroPasepServ, long identidadeServ,
-			String orgaoIdentidadeServ, Date dataEmissaoIdentidadeServ,
+			String dataEmisaoServ, long numCtpsServ, long serieCtpsServ,
+			String dataEmissaoCtpsServ, long numPasepServ,
+			String dataCadastroPasepServ, long identidadeServ,
+			String orgaoIdentidadeServ, String dataEmissaoIdentidadeServ,
 			long numTituloServ, long numSessaoTituloServ,
 			String zonaTituloServ, int numCpfServ, int certMilitarServ) {
 		this.enderecoServ = endereco_serv;
@@ -128,6 +130,7 @@ public class Servidor {
 		this.grauInstrucaoServ = grau_instrucao;
 		this.areaFormacaoServ = area_formacao;
 		this.nomeServ = nomeServ;
+                this.SIAPE = SIAPE;
 		this.sexoServ = sexoServ;
 		this.dataNascServ = dataNascServ;
 		this.estadoCivilServ = estadoCivilServ;
@@ -136,12 +139,12 @@ public class Servidor {
 		this.nomePaiServ = nomePaiServ;
 		this.nomeMaeServ = nomeMaeServ;
 		this.cargoServ = cargoServ;
-		this.dataEmisaoServ = dataEmisaoServ;
+		this.dataAdmissaoServ = dataEmisaoServ;
 		this.numCtpsServ = numCtpsServ;
 		this.serieCtpsServ = serieCtpsServ;
 		this.dataEmissaoCtpsServ = dataEmissaoCtpsServ;
-		this.numPasepServ = numPasepServ;
-		this.dataCadastroPasepServ = dataCadastroPasepServ;
+		this.numPisPasepServ = numPasepServ;
+		this.dataCadastroPisPasepServ = dataCadastroPasepServ;
 		this.identidadeServ = identidadeServ;
 		this.orgaoIdentidadeServ = orgaoIdentidadeServ;
 		this.dataEmissaoIdentidadeServ = dataEmissaoIdentidadeServ;
@@ -176,6 +179,22 @@ public class Servidor {
 		this.idServ = idServ;
 	}
 
+        public String getAreaFormacaoServ() {
+            return areaFormacaoServ;
+        }
+
+        public void setAreaFormacaoServ(String areaFormacaoServ) {
+            this.areaFormacaoServ = areaFormacaoServ;
+        }
+
+        public String getSIAPE() {
+            return SIAPE;
+        }
+
+        public void setSIAPE(String SIAPE) {
+            this.SIAPE = SIAPE;
+        }
+
 	public String getGrauInstrucaoServ() {
 		return grauInstrucaoServ;
 	}
@@ -208,11 +227,11 @@ public class Servidor {
 		this.sexoServ = sexoServ;
 	}
 
-	public Date getDataNascServ() {
+	public String getDataNascServ() {
 		return dataNascServ;
 	}
 
-	public void setDataNascServ(Date dataNascServ) {
+	public void setDataNascServ(String dataNascServ) {
 		this.dataNascServ = dataNascServ;
 	}
 
@@ -232,12 +251,13 @@ public class Servidor {
 		this.naturalidadeServ = naturalidadeServ;
 	}
 
-	public boolean isDeficinteFisico() {
+	public String isDeficinteFisico() {
 		return deficinteFisico;
 	}
 
-	public void setDeficinteFisico(boolean deficinteFisico) {
-		this.deficinteFisico = deficinteFisico;
+	public void setDeficinteFisico(String deficinteFisico) {
+	
+            this.deficinteFisico = deficinteFisico;
 	}
 
 	public String getNomePaiServ() {
@@ -264,12 +284,12 @@ public class Servidor {
 		this.cargoServ = cargoServ;
 	}
 
-	public Date getDataEmisaoServ() {
-		return dataEmisaoServ;
+	public String getDataAdmissaoServ() {
+		return dataAdmissaoServ;
 	}
 
-	public void setDataEmisaoServ(Date dataEmisaoServ) {
-		this.dataEmisaoServ = dataEmisaoServ;
+	public void setDataAdmissaoServ(String dataAdmissaoServ) {
+		this.dataAdmissaoServ = dataAdmissaoServ;
 	}
 
 	public long getNumCtpsServ() {
@@ -288,29 +308,29 @@ public class Servidor {
 		this.serieCtpsServ = serieCtpsServ;
 	}
 
-	public Date getDataEmissaoCtpsServ() {
+	public String getDataEmissaoCtpsServ() {
 		return dataEmissaoCtpsServ;
 	}
 
-	public void setDataEmissaoCtpsServ(Date dataEmissaoCtpsServ) {
+	public void setDataEmissaoCtpsServ(String dataEmissaoCtpsServ) {
 		this.dataEmissaoCtpsServ = dataEmissaoCtpsServ;
 	}
 
-	public long getNumPasepServ() {
-		return numPasepServ;
+	public long getNumPisPasepServ() {
+		return numPisPasepServ;
 	}
 
-	public void setNumPasepServ(long numPasepServ) {
-		this.numPasepServ = numPasepServ;
+	public void setNumPisPasepServ(long numPisPasepServ) {
+		this.numPisPasepServ = numPisPasepServ;
 	}
 
-	public Date getDataCadastroPasepServ() {
-		return dataCadastroPasepServ;
+	public String getDataCadastroPisPasepServ() {
+		return dataCadastroPisPasepServ;
 	}
 
-	public void setDataCadastroPasepServ(Date dataCadastroPasepServ) {
+	public void setDataCadastroPisPasepServ(String dataCadastroPisPasepServ) {
 		
-		this.dataCadastroPasepServ = dataCadastroPasepServ;
+		this.dataCadastroPisPasepServ = dataCadastroPisPasepServ;
 	}
 
 	public long getIdentidadeServ() {
@@ -329,11 +349,11 @@ public class Servidor {
 		this.orgaoIdentidadeServ = orgaoIdentidadeServ;
 	}
 
-	public Date getDataEmissaoIdentidadeServ() {
+	public String getDataEmissaoIdentidadeServ() {
 		return dataEmissaoIdentidadeServ;
 	}
 
-	public void setDataEmissaoIdentidadeServ(Date dataEmissaoIdentidadeServ) {
+	public void setDataEmissaoIdentidadeServ(String dataEmissaoIdentidadeServ) {
 		this.dataEmissaoIdentidadeServ = dataEmissaoIdentidadeServ;
 	}
 
@@ -377,49 +397,47 @@ public class Servidor {
 		this.certMilitarServ = certMilitarServ;
 	}
 
-	@Override
-	public int hashCode() {
-		int hash = 5;
-		hash = 71 * hash + (int) (this.idServ ^ (this.idServ >>> 32));
-		return hash;
-	}
+        @Override
+        public int hashCode() {
+            int hash = 7;
+            hash = 71 * hash + (int) (this.idServ ^ (this.idServ >>> 32));
+            hash = 71 * hash + Objects.hashCode(this.SIAPE);
+            return hash;
+        }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (obj == null) {
-			return false;
-		}
-		if (getClass() != obj.getClass()) {
-			return false;
-		}
-		final Servidor other = (Servidor) obj;
-		if (this.idServ != other.idServ) {
-			return false;
-		}
-		return true;
-	}
+        @Override
+        public boolean equals(Object obj) {
+            if (obj == null) {
+                return false;
+            }
+            if (getClass() != obj.getClass()) {
+                return false;
+            }
+            final Servidor other = (Servidor) obj;
+            if (this.idServ != other.idServ) {
+                return false;
+            }
+            if (!Objects.equals(this.SIAPE, other.SIAPE)) {
+                return false;
+            }
+            return true;
+        }
+
 
 	@Override
 	public String toString() {
-		return "Servidor{" + "endereco_serv=" + enderecoServ + ", dependentes="
-				+ dependentesServ + ", idServ=" + idServ + ", grau_instrucao="
-				+ grauInstrucaoServ + ", area_formacao=" + areaFormacaoServ
-				+ ", nomeServ=" + nomeServ + ", sexoServ=" + sexoServ
-				+ ", dataNascServ=" + dataNascServ + ", estadoCivilServ="
-				+ estadoCivilServ + ", naturalidadeServ=" + naturalidadeServ
-				+ ", deficinteFisico=" + deficinteFisico + ", nomePaiServ="
-				+ nomePaiServ + ", nomeMaeServ=" + nomeMaeServ + ", cargoServ="
-				+ cargoServ + ", dataEmisaoServ=" + dataEmisaoServ
-				+ ", numCtpsServ=" + numCtpsServ + ", serieCtpsServ="
-				+ serieCtpsServ + ", dataEmissaoCtpsServ="
-				+ dataEmissaoCtpsServ + ", numPasepServ=" + numPasepServ
-				+ ", dataCadastroPasepServ=" + dataCadastroPasepServ
-				+ ", identidadeServ=" + identidadeServ
-				+ ", orgaoIdentidadeServ=" + orgaoIdentidadeServ
-				+ ", dataEmissaoIdentidadeServ=" + dataEmissaoIdentidadeServ
-				+ ", numTituloServ=" + numTituloServ + ", numSessaoTituloServ="
-				+ numSessaoTituloServ + ", zonaTituloServ=" + zonaTituloServ
-				+ ", numCpfServ=" + numCpfServ + ", certMilitarServ="
-				+ certMilitarServ + '}';
+		return "Servidor{ " + "Id do Servidor= " + idServ + ", Endereço do Servidor= " + enderecoServ + ",\n" +
+                        " Dependentes do Servidor= " + dependentesServ + ", Grau de Instrução do Servidor= " + grauInstrucaoServ + ",\n" +
+                        " Área de formação do Servidor= " + areaFormacaoServ + ", Nome do Servidor=" + nomeServ + ",\n" +
+                        " Sexo do Servidor= " + sexoServ + ", Data de Nascimento do Servidor= " + dataNascServ + ",\n" + 
+                        " Estado Civil do Servidor= " + estadoCivilServ + ", Naturalidade do Servidor= " + naturalidadeServ + ",\n" + 
+                        " Deficinte Fisico= " + deficinteFisico + ", Nome do Pai do Servidor= " + nomePaiServ +  ",\n" +
+                        " Nome da Mãe do Servidor= " + nomeMaeServ + ", Cargo do Servidor= " + cargoServ +  ",\n" +
+                        " Data de Admissão do Servidor= " + dataAdmissaoServ + ", Número do Ctps do Servidor= " + numCtpsServ +  ",\n" +
+                        " Número do PIS/PASEP do Servidor= " + numPisPasepServ + ", Data de Cadastro do PIS/PASEP do Servidor= " + dataCadastroPisPasepServ + ",\n" + 
+                        " Número da Identidade do Servidor= " + identidadeServ + ", Orgão da Identidade do Servidor= " + orgaoIdentidadeServ + ",\n" +
+                        " Data de Emissão da Identidade do Servidor= " + dataEmissaoIdentidadeServ + ", Número do Título do Servidor= " + numTituloServ +  "\n" +
+                        " Número da Sessão do Título do Servidor= " + numSessaoTituloServ + ", Zona do Título do Servidor= " + zonaTituloServ +  ",\n" +
+                        " Número do CPF do Servidor= " + numCpfServ + ", Certidão Militar do Servidor= " + certMilitarServ + " }";
 	}
 }

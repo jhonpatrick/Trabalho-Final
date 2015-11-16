@@ -159,9 +159,9 @@ public class Endereco {
 
     @Override
     public String toString() {
-        return "Endereco{" + "servidor=" + servidor + ", id=" + id + ", UF=" + UF + 
-                ", cidade=" + cidade + ", bairro=" + bairro + ", numero=" + numero + 
-                ", rua=" + rua + ", email=" + email + ", telefone=" + telefone + '}';
+        return "Endereço{ " + "Id do Endereço= " + id + ", Servidor Neste Endereço= " + servidor + ", UF= " + UF + ",\n" +
+                " Cidade=" + cidade + ", Bairro=" + bairro + ", Número= " + numero + ",\n" +
+                " Rua= " + rua + ", E-mail= " + email + ", Telefone= " + telefone + " }" + ",\n";
     }
 
 }
