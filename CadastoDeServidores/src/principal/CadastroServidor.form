@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-23,0,0,3,-46"/>
+  </AuxValues>
+
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+      <Properties>
+        <Property name="verticalScrollBarPolicy" type="int" value="22"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jScrollPane4MouseEntered"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="Center"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel4">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="imgIfpiLogo2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel84" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel79" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel81" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel80" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel82" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="273" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jlbNome2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jlbCargo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="jtxfNome2" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                              <Component id="jlbSiaepi2" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="txfCargo" max="32767" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="txfDataEmissao" alignment="0" pref="172" max="32767" attributes="0"/>
+                                          <Component id="jtxfSiaepi2" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel87" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txfDataNascimento" min="-2" pref="210" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txfNaturalidade" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel94" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txfRua" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel95" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txfNumeroDaCasa" min="-2" pref="196" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel96" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txfTelefone" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel97" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel98" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txfEmail" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="txfCtps" min="-2" pref="264" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jLabel99" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txfSerie" min="-2" pref="83" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jLabel100" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txfEmissao" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="jLabel103" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txfIdentidade" min="-2" pref="213" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jLabel104" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txfOrgao" min="-2" pref="167" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel101" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txfPasep" min="-2" pref="321" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jLabel102" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="jLabel106" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txfTitulo" min="-2" pref="234" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jLabel107" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txfSecaoTitulo" min="-2" pref="155" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txfDataCadastroPasep" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel105" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txfDataEmissaoIdentidade" pref="314" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel108" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txfZonaTitulo" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel109" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txfCpf" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel110" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txfCertMilitar" min="-2" pref="407" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel111" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txfNomePai" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel112" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txfNomeMae" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel113" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txfGrauDeInstrucao" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel114" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txfAreaDeFormacao" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txfEstadoCivil" max="32767" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbDeficienteFisico" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel92" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txfCidade" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel93" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txfBairro" min="-2" pref="420" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txfUF" min="-2" pref="62" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jSeparator3" min="-2" pref="213" max="-2" attributes="0"/>
+                          <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="348" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txfNomeDependente" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txfDataNascimentoDependente" min="-2" pref="122" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="btnSalvar" min="-2" pref="250" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txfParentescoDependente" min="-2" pref="113" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnAdicionarDependente" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                              <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel79" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel80" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel81" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel82" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="imgIfpiLogo2" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jSeparator3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jlbNome2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtxfNome2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbSiaepi2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtxfSiaepi2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jlbCargo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txfCargo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel86" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txfDataEmissao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel87" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="txfDataNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel88" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txfNaturalidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="cbDeficienteFisico" max="32767" attributes="0"/>
+                          <Component id="jLabel90" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel89" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txfEstadoCivil" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel91" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txfUF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel92" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txfCidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel93" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txfBairro" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel94" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txfRua" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel95" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txfNumeroDaCasa" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel96" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txfTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel97" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txfEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel98" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txfCtps" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel99" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txfSerie" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel100" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txfEmissao" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel101" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txfPasep" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel102" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txfDataCadastroPasep" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel103" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txfIdentidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel104" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txfOrgao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel105" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txfDataEmissaoIdentidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jLabel106" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                              <Component id="txfTitulo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel107" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txfSecaoTitulo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel108" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txfZonaTitulo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel109" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txfCpf" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel110" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txfCertMilitar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel111" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txfNomePai" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel112" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txfNomeMae" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel113" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txfGrauDeInstrucao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel114" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txfAreaDeFormacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txfNomeDependente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txfDataNascimentoDependente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txfParentescoDependente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAdicionarDependente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="46" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel79">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="INSTITUTO FEDERAL DE EDUCA&#xc7;&#xc3;O, CI&#xca;NCIA E TECNOLOGIA DO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel80">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="PIAUI"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel81">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CAMPUS PARNA&#xcd;BA"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel82">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="COORDENA&#xc7;&#xc3;O DE RECURSOS HUMANOS"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel83">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="FICHA DE CADASTRO DE SERVIDORES"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="imgIfpiLogo2">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/Ifpi02.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel84">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="MINISTERIO DA EDUCA&#xc7;&#xc3;O"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlbNome2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="NOME"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jtxfNome2">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtxfNome2jtxfNomeActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlbSiaepi2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="SIAEPI"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jtxfSiaepi2">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlbCargo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CARGO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfCargo">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel86">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="DATA DE ADMISS&#xc3;O:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfDataEmissao">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel87">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="DATA NASCIMENTO:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfDataNascimento">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfDataNascimentoActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel88">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="NATURALIDADE"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfNaturalidade">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfNaturalidadeActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator3">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel89">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ESTADO CIVIL"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfEstadoCivil">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfEstadoCiviljTextField5ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel90">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="DEFICIENTE F&#xed;SICO?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="cbDeficienteFisico">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbDeficienteFisicojCheckBox1ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel91">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="UF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfUF">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfUFActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel92">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CIDADE"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfCidade">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel93">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="BAIRRO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfBairro">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel94">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="RUA"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfRua">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel95">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="N&#xda;MERO DA CASA"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfNumeroDaCasa">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfNumeroDaCasaActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel96">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="TELEFONE(S) PARA CONTATO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfTelefone">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfTelefoneActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel97">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="E-MAIL"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfEmail">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel98">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CTPS N.&#xb0;"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfCtps">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel99">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="S&#xc9;RIE"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfSerie">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfSerieActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel100">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="EMISS&#xc3;O EM"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfEmissao">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel101">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="PIS/PASEP N.&#xb0;"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfPasep">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel102">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CADASTRADO EM"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfDataCadastroPasep">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel103">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="IDENTIDADE"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfIdentidade">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel104">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ORG&#xc3;O"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfOrgao">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel105">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="EMISS&#xc3;O EM"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfDataEmissaoIdentidade">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel106">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="N.&#xb0; T&#xcd;TULO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfTitulo">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel107">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="SE&#xc7;&#xc3;O"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfSecaoTitulo">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel108">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ZONA/UF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfZonaTitulo">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel109">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CPF N.&#xb0;"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfCpf">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel110">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CERT. MILITAR"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfCertMilitar">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel111">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="NOME DO PAI"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfNomePai">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel112">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="NOME DA M&#xc3;E"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfNomeMae">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel113">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="GRAU DE INSTRU&#xc7;&#xc3;O"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfGrauDeInstrucao">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel114">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#xc1;REA DE FORMA&#xc7;&#xc3;O"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfAreaDeFormacao">
+            </Component>
+            <Component class="javax.swing.JButton" name="btnSalvar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="SALVAR"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="DEPENDENTE"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfNomeDependente">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="DATA DE NASCIMENTO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfDataNascimentoDependente">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfDataNascimentoDependenteActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="PARENTESCO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txfParentescoDependente">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnAdicionarDependente">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ADICIONAR"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
