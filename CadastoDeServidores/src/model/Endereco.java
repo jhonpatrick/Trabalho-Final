@@ -5,7 +5,9 @@
  */
 package model;
 
+import java.util.List;
 import java.util.logging.Logger;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,7 +24,7 @@ public class Endereco {
 
     //criando relações entre as tabelas
     @OneToMany(mappedBy = "enderecoServ")
-    private Servidor servidor;
+    private List<Servidor> servidor;
     //criando o atributo id no banco e colocando pra ser gerado automático
     @Id @GeneratedValue
     private long id;
@@ -38,7 +40,7 @@ public class Endereco {
         super();
     }
 
-    public Endereco(Servidor servidor, long id, String UF, String cidade, String bairro, int numero, String rua, String email, String telefone) {
+    public Endereco(List<Servidor> servidor, long id, String UF, String cidade, String bairro, int numero, String rua, String email, String telefone) {
         this.servidor = servidor;
         this.id = id;
         this.UF = UF;
@@ -50,7 +52,7 @@ public class Endereco {
         this.telefone = telefone;
     }
 
-    public Endereco(Servidor servidor, String UF, String cidade, String bairro, int numero, String rua, String email, String telefone) {
+    public Endereco(List<Servidor> servidor, String UF, String cidade, String bairro, int numero, String rua, String email, String telefone) {
         this.servidor = servidor;
         this.UF = UF;
         this.cidade = cidade;
@@ -61,11 +63,11 @@ public class Endereco {
         this.telefone = telefone;
     }
 
-    public Servidor getServidor() {
+    public List<Servidor> getServidor() {
         return servidor;
     }
 
-    public void setServidor(Servidor servidor) {
+    public void setServidor(List<Servidor> servidor) {
         this.servidor = servidor;
     }
 
@@ -157,9 +159,9 @@ public class Endereco {
 
     @Override
     public String toString() {
-        return "Endereco{" + "servidor=" + servidor + ", id=" + id + ", UF=" + UF + 
-                ", cidade=" + cidade + ", bairro=" + bairro + ", numero=" + numero + 
-                ", rua=" + rua + ", email=" + email + ", telefone=" + telefone + '}';
+        return "Endereço{ " + "Id do Endereço= " + id + ", Servidor Neste Endereço= " + servidor + ", UF= " + UF + ",\n" +
+                " Cidade=" + cidade + ", Bairro=" + bairro + ", Número= " + numero + ",\n" +
+                " Rua= " + rua + ", E-mail= " + email + ", Telefone= " + telefone + " }" + ",\n";
     }
 
 }

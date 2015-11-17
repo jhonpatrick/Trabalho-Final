@@ -57,7 +57,7 @@ public class EnderecoDAO {
         
         public List<Endereco> listar(){
             List<Endereco> ls = new ArrayList<Endereco>();
-            Query query = em.createQuery("select s from Servidor s");
+            Query query = em.createQuery("select e from Endereco e");
             return ls = query.getResultList();
         }
 }

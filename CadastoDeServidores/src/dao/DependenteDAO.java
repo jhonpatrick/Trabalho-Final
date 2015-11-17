@@ -57,7 +57,7 @@ public class DependenteDAO {
         
         public List<Dependentes> listar(){
             List<Dependentes> ls = new ArrayList<Dependentes>();
-            Query query = em.createQuery("select s from Servidor s");
+            Query query = em.createQuery("select d from Dependentes d");
             return ls = query.getResultList();
         }
 }

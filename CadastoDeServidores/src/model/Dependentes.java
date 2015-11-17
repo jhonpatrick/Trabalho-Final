@@ -5,10 +5,8 @@
  */
 package model;
 
+import java.util.List;
 
-
-import java.util.Date;
-import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -29,16 +27,16 @@ public class Dependentes {
     private long id;
     //criando relaçções entres as tabelas 
     @ManyToMany(mappedBy = "dependentesServ")
-    private Servidor servidor;
+    private List<Servidor> servidor;
     private String nomeDependente;
-    private Date dataNascimentoDependente;
+    private String dataNascimentoDependente;
     private String parentesco;
 
     public Dependentes() {
         super();
     }
 
-    public Dependentes(long id, Servidor servidor, String nomeDependente, Date dataNascimentoDependente, String parentesco) {
+    public Dependentes(long id, List<Servidor> servidor, String nomeDependente, String dataNascimentoDependente, String parentesco) {
         this.id = id;
         this.servidor = servidor;
         this.nomeDependente = nomeDependente;
@@ -46,7 +44,7 @@ public class Dependentes {
         this.parentesco = parentesco;
     }
 
-    public Dependentes(Servidor servidor, String nomeDependente, Date dataNascimentoDependente, String parentesco) {
+    public Dependentes(List<Servidor> servidor, String nomeDependente, String dataNascimentoDependente, String parentesco) {
         this.servidor = servidor;
         this.nomeDependente = nomeDependente;
         this.dataNascimentoDependente = dataNascimentoDependente;
@@ -61,11 +59,11 @@ public class Dependentes {
         this.id = id;
     }
 
-    public Servidor getServidor() {
+    public List<Servidor> getServidor() {
         return servidor;
     }
 
-    public void setServidor(Servidor servidor) {
+    public void setServidor(List<Servidor> servidor) {
         this.servidor = servidor;
     }
 
@@ -77,11 +75,11 @@ public class Dependentes {
         this.nomeDependente = nomeDependente;
     }
 
-    public Date getDataNascimentoDependente() {
+    public String getDataNascimentoDependente() {
         return dataNascimentoDependente;
     }
 
-    public void setDataNascimentoDependente(Date dataNascimentoDependente) {
+    public void setDataNascimentoDependente(String dataNascimentoDependente) {
         this.dataNascimentoDependente = dataNascimentoDependente;
     }
 
@@ -116,7 +114,9 @@ public class Dependentes {
 
     @Override
     public String toString() {
-        return "Dependentes{" + "id=" + id + ", servidor=" + servidor + ", nomeDependente=" + nomeDependente + ", dataNascimentoDependente=" + dataNascimentoDependente + ", parentesco=" + parentesco + '}';
+        return "Dependentes{ " + "Id do Dependente= " + id + ", Servidores= " + servidor + ",\n" +
+                " Nome do Dependente= " + nomeDependente + ", Data de Nascimento do Dependente= " + dataNascimentoDependente + ",\n" +
+                " Parentesco= " + parentesco + "}"  + "\n";
     }
     
     
