@@ -13,7 +13,7 @@ import model.Servidor;
  * @author Lord Devil Hunter
  */
 public class ServidorDao {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("trabalho-finalPRO");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Servidor");
         
         EntityManager em = emf.createEntityManager();
         

@@ -18,7 +18,7 @@ import model.Dependentes;
  * @author Lord Devil Hunter
  */
 public class DependenteDAO {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("trabalho-finalPRO");
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("Servidor");
         
         EntityManager em = emf.createEntityManager();
         

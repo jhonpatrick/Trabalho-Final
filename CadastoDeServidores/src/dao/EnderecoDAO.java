@@ -18,7 +18,7 @@ import model.Endereco;
  * @author Lord Devil Hunter
  */
 public class EnderecoDAO {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("trabalho-finalPRO");
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("Servidor");
         
         EntityManager em = emf.createEntityManager();
         

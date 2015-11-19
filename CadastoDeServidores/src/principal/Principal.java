@@ -26,7 +26,7 @@ public class Principal {
         // TODO code application logic here
     	
     	EntityManagerFactory emf = Persistence.
-				createEntityManagerFactory("trabalho-finalPRO");
+				createEntityManagerFactory("Servidor");
 		
 		EntityManager em = emf.createEntityManager();
 		//chamando a class de Servidores
