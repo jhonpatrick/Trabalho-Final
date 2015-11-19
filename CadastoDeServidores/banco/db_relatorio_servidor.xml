@@ -1,0 +1,12 @@
+<?xml version="1.0"?><!-- iReport connections -->
+<iReportConnectionSet>
+	<iReportConnection name="Empty datasource" connectionClass="com.jaspersoft.ireport.designer.connection.JREmptyDatasourceConnection">
+		<connectionParameter name="records"><![CDATA[1]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="trabalho-finalPRO" connectionClass="com.jaspersoft.ireport.designer.connection.JRHibernateConnection">
+		<connectionParameter name="useAnnotations"><![CDATA[true]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="Servidor" connectionClass="com.jaspersoft.ireport.designer.connection.JRHibernateConnection">
+		<connectionParameter name="useAnnotations"><![CDATA[true]]></connectionParameter>
+	</iReportConnection>
+</iReportConnectionSet>
