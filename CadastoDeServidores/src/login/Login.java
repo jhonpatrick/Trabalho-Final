@@ -5,6 +5,7 @@
  */
 package login;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -12,6 +13,8 @@ import javax.persistence.Id;
  *
  * @author Lord Devil Hunter
  */
+@Entity
+
 public class Login {
     @Id
     @GeneratedValue
