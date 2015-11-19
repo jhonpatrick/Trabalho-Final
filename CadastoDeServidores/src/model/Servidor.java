@@ -42,19 +42,19 @@ public class Servidor {
 	private String areaFormacaoServ;
 	private String nomeServ;
         //Atenção esse atributo SIAPE, será o login para os Servidores entrarem na sua respectiva conta
-        private String SIAPE;
-	private char sexoServ;
+        private String SIAPE; 
+	private char sexoServ; // <<<<-------- Falta editar!
 	private String dataNascServ;
 	private String estadoCivilServ;
 	private String naturalidadeServ;
-	private String deficinteFisico;
+	private String deficinteFisico; // <<<<<------- Mudar para boolean!
 	private String nomePaiServ;
 	private String nomeMaeServ;
 
 	private String cargoServ;
 	private String dataAdmissaoServ;
 
-	private long numCtpsServ;
+	private long numCtpsServ; //<<<<<<---- Mudar para String?
 	private long serieCtpsServ;
 	private String dataEmissaoCtpsServ;
 	private long numPisPasepServ;
@@ -65,8 +65,8 @@ public class Servidor {
 	private long numTituloServ;
 	private long numSessaoTituloServ;
 	private String zonaTituloServ;
-	private int numCpfServ;
-	private int certMilitarServ;
+	private String numCpfServ;
+	private long certMilitarServ;
 
 	public Servidor() {
 		super();
@@ -82,7 +82,7 @@ public class Servidor {
 			String dataCadastroPasepServ, long identidadeServ,
 			String orgaoIdentidadeServ, String dataEmissaoIdentidadeServ,
 			long numTituloServ, long numSessaoTituloServ,
-			String zonaTituloServ, int numCpfServ, int certMilitarServ) {
+			String zonaTituloServ, String numCpfServ, long certMilitarServ) {
 		this.enderecoServ = endereco_serv;
 		this.dependentesServ = dependentes;
                 this.idServ = idServ;
@@ -124,7 +124,7 @@ public class Servidor {
 			String dataCadastroPasepServ, long identidadeServ,
 			String orgaoIdentidadeServ, String dataEmissaoIdentidadeServ,
 			long numTituloServ, long numSessaoTituloServ,
-			String zonaTituloServ, int numCpfServ, int certMilitarServ) {
+			String zonaTituloServ, String numCpfServ, long certMilitarServ) {
 		this.enderecoServ = endereco_serv;
 		this.dependentesServ = dependentes;
 		this.grauInstrucaoServ = grau_instrucao;
@@ -381,19 +381,19 @@ public class Servidor {
 		this.zonaTituloServ = zonaTituloServ;
 	}
 
-	public int getNumCpfServ() {
+	public String getNumCpfServ() {
 		return numCpfServ;
 	}
 
-	public void setNumCpfServ(int numCpfServ) {
+	public void setNumCpfServ(String numCpfServ) {
 		this.numCpfServ = numCpfServ;
 	}
 
-	public int getCertMilitarServ() {
+	public long getCertMilitarServ() {
 		return certMilitarServ;
 	}
 
-	public void setCertMilitarServ(int certMilitarServ) {
+	public void setCertMilitarServ(long certMilitarServ) {
 		this.certMilitarServ = certMilitarServ;
 	}
 

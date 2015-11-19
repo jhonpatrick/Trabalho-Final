@@ -12,8 +12,13 @@ import model.Servidor;
  *
  * @author Lord Devil Hunter
  */
+<<<<<<< HEAD:CadastoDeServidores/src/dao/ServidorDao.java
 public class ServidorDao {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Servidor");
+=======
+public class ServidorDAO {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("trabalho-finalPRO");
+>>>>>>> 8c1ed5adc20c26068b1979b163e1852948e1a90b:CadastoDeServidores/src/dao/ServidorDAO.java
         
         EntityManager em = emf.createEntityManager();
         
