@@ -5,6 +5,12 @@
  */
 package principal;
 
+import dao.ServidorDAO;
+import javax.swing.JOptionPane;
+import model.Dependentes;
+import model.Endereco;
+import model.Servidor;
+
 /**
  *
  * @author Lord Devil Hunter
@@ -14,6 +20,12 @@ public class CadastroServidor extends javax.swing.JFrame {
     /**
      * Creates new form CadastroServidor
      */
+    Servidor servidor;
+    Endereco endereco;
+    Dependentes dependentes;
+    
+    ServidorDAO sDao = new ServidorDAO();
+        
     public CadastroServidor() {
         initComponents();
     }
@@ -37,22 +49,21 @@ public class CadastroServidor extends javax.swing.JFrame {
         imgIfpiLogo2 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
         jlbNome2 = new javax.swing.JLabel();
-        jtxfNome2 = new javax.swing.JTextField();
+        txfNomeServ = new javax.swing.JTextField();
         jlbSiaepi2 = new javax.swing.JLabel();
-        jtxfSiaepi2 = new javax.swing.JTextField();
+        txfSiaepi = new javax.swing.JTextField();
         jlbCargo = new javax.swing.JLabel();
         txfCargo = new javax.swing.JTextField();
         jLabel86 = new javax.swing.JLabel();
-        txfDataEmissao = new javax.swing.JTextField();
+        txfDataEmissaoCargo = new javax.swing.JTextField();
         jLabel87 = new javax.swing.JLabel();
-        txfDataNascimento = new javax.swing.JTextField();
+        txfDataNascimentoServ = new javax.swing.JTextField();
         jLabel88 = new javax.swing.JLabel();
-        txfNaturalidade = new javax.swing.JTextField();
+        txfNaturalidadeServ = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel89 = new javax.swing.JLabel();
-        txfEstadoCivil = new javax.swing.JTextField();
+        txfEstadoCivilServ = new javax.swing.JTextField();
         jLabel90 = new javax.swing.JLabel();
-        cbDeficienteFisico = new javax.swing.JCheckBox();
         jLabel91 = new javax.swing.JLabel();
         txfUF = new javax.swing.JTextField();
         jLabel92 = new javax.swing.JLabel();
@@ -70,11 +81,11 @@ public class CadastroServidor extends javax.swing.JFrame {
         jLabel98 = new javax.swing.JLabel();
         txfCtps = new javax.swing.JTextField();
         jLabel99 = new javax.swing.JLabel();
-        txfSerie = new javax.swing.JTextField();
+        txfSerieCtps = new javax.swing.JTextField();
         jLabel100 = new javax.swing.JLabel();
-        txfEmissao = new javax.swing.JTextField();
+        txfDataEmissaoCtps = new javax.swing.JTextField();
         jLabel101 = new javax.swing.JLabel();
-        txfPasep = new javax.swing.JTextField();
+        txfnumPisPasep = new javax.swing.JTextField();
         jLabel102 = new javax.swing.JLabel();
         txfDataCadastroPasep = new javax.swing.JTextField();
         jLabel103 = new javax.swing.JLabel();
@@ -84,13 +95,13 @@ public class CadastroServidor extends javax.swing.JFrame {
         jLabel105 = new javax.swing.JLabel();
         txfDataEmissaoIdentidade = new javax.swing.JTextField();
         jLabel106 = new javax.swing.JLabel();
-        txfTitulo = new javax.swing.JTextField();
+        txfNumTituloServ = new javax.swing.JTextField();
         jLabel107 = new javax.swing.JLabel();
-        txfSecaoTitulo = new javax.swing.JTextField();
+        txfNumSecaoTitulo = new javax.swing.JTextField();
         jLabel108 = new javax.swing.JLabel();
         txfZonaTitulo = new javax.swing.JTextField();
         jLabel109 = new javax.swing.JLabel();
-        txfCpf = new javax.swing.JTextField();
+        txfNumCpfServ = new javax.swing.JTextField();
         jLabel110 = new javax.swing.JLabel();
         txfCertMilitar = new javax.swing.JTextField();
         jLabel111 = new javax.swing.JLabel();
@@ -109,6 +120,10 @@ public class CadastroServidor extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txfParentescoDependente = new javax.swing.JTextField();
         btnAdicionarDependente = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        CaixaSexo = new javax.swing.JComboBox<>();
+        txfDeficienteFisico = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,12 +150,6 @@ public class CadastroServidor extends javax.swing.JFrame {
 
         jlbNome2.setText("NOME");
 
-        jtxfNome2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxfNome2jtxfNomeActionPerformed(evt);
-            }
-        });
-
         jlbSiaepi2.setText("SIAEPI");
 
         jlbCargo.setText("CARGO");
@@ -149,43 +158,13 @@ public class CadastroServidor extends javax.swing.JFrame {
 
         jLabel87.setText("DATA NASCIMENTO:");
 
-        txfDataNascimento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txfDataNascimentoActionPerformed(evt);
-            }
-        });
-
         jLabel88.setText("NATURALIDADE");
-
-        txfNaturalidade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txfNaturalidadeActionPerformed(evt);
-            }
-        });
 
         jLabel89.setText("ESTADO CIVIL");
 
-        txfEstadoCivil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txfEstadoCiviljTextField5ActionPerformed(evt);
-            }
-        });
-
         jLabel90.setText("DEFICIENTE FíSICO?");
 
-        cbDeficienteFisico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbDeficienteFisicojCheckBox1ActionPerformed(evt);
-            }
-        });
-
         jLabel91.setText("UF");
-
-        txfUF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txfUFActionPerformed(evt);
-            }
-        });
 
         jLabel92.setText("CIDADE");
 
@@ -195,31 +174,13 @@ public class CadastroServidor extends javax.swing.JFrame {
 
         jLabel95.setText("NÚMERO DA CASA");
 
-        txfNumeroDaCasa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txfNumeroDaCasaActionPerformed(evt);
-            }
-        });
-
         jLabel96.setText("TELEFONE(S) PARA CONTATO");
-
-        txfTelefone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txfTelefoneActionPerformed(evt);
-            }
-        });
 
         jLabel97.setText("E-MAIL");
 
         jLabel98.setText("CTPS N.°");
 
         jLabel99.setText("SÉRIE");
-
-        txfSerie.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txfSerieActionPerformed(evt);
-            }
-        });
 
         jLabel100.setText("EMISSÃO EM");
 
@@ -252,6 +213,11 @@ public class CadastroServidor extends javax.swing.JFrame {
         jLabel114.setText("ÁREA DE FORMAÇÃO");
 
         btnSalvar.setText("SALVAR");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("DEPENDENTE");
 
@@ -260,11 +226,6 @@ public class CadastroServidor extends javax.swing.JFrame {
         jLabel2.setText("DATA DE NASCIMENTO");
 
         txfDataNascimentoDependente.setEnabled(false);
-        txfDataNascimentoDependente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txfDataNascimentoDependenteActionPerformed(evt);
-            }
-        });
 
         jLabel3.setText("PARENTESCO");
 
@@ -272,6 +233,12 @@ public class CadastroServidor extends javax.swing.JFrame {
 
         btnAdicionarDependente.setText("ADICIONAR");
         btnAdicionarDependente.setEnabled(false);
+
+        jLabel4.setText("SEXO");
+
+        CaixaSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jButton1.setText("VOLTAR");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -288,7 +255,7 @@ public class CadastroServidor extends javax.swing.JFrame {
                             .addComponent(jLabel81)
                             .addComponent(jLabel80)
                             .addComponent(jLabel82))
-                        .addGap(0, 273, Short.MAX_VALUE))
+                        .addGap(0, 285, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -299,7 +266,7 @@ public class CadastroServidor extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(jtxfNome2)
+                                        .addComponent(txfNomeServ)
                                         .addGap(14, 14, 14)
                                         .addComponent(jlbSiaepi2))
                                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -308,16 +275,8 @@ public class CadastroServidor extends javax.swing.JFrame {
                                         .addComponent(jLabel86)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txfDataEmissao, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                                    .addComponent(jtxfSiaepi2)))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel87)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txfDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel88)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txfNaturalidade))
+                                    .addComponent(txfDataEmissaoCargo, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                                    .addComponent(txfSiaepi)))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel94)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -342,11 +301,11 @@ public class CadastroServidor extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel99)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txfSerie, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txfSerieCtps, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel100)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txfEmissao))))
+                                        .addComponent(txfDataEmissaoCtps))))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -360,24 +319,24 @@ public class CadastroServidor extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                                         .addComponent(jLabel101)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txfPasep, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txfnumPisPasep, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel102))
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addComponent(jLabel106)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txfTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txfNumTituloServ, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel107)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txfSecaoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(txfNumSecaoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txfDataCadastroPasep)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addComponent(jLabel105)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txfDataEmissaoIdentidade, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE))
+                                        .addComponent(txfDataEmissaoIdentidade, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE))
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addComponent(jLabel108)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -385,7 +344,7 @@ public class CadastroServidor extends javax.swing.JFrame {
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel109)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txfCpf)
+                                .addComponent(txfNumCpfServ)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel110)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -406,14 +365,6 @@ public class CadastroServidor extends javax.swing.JFrame {
                                 .addComponent(jLabel114)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txfAreaDeFormacao))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel89)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txfEstadoCivil)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel90)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbDeficienteFisico))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel92)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -425,7 +376,31 @@ public class CadastroServidor extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel91)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txfUF, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txfUF, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(jLabel87)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txfDataNascimentoServ, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel88)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txfNaturalidadeServ, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(jLabel89)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txfEstadoCivilServ, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel90)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(CaixaSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(txfDeficienteFisico))))))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -435,26 +410,26 @@ public class CadastroServidor extends javax.swing.JFrame {
                 .addGap(348, 348, 348))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txfNomeDependente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txfDataNascimentoDependente, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)))
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txfNomeDependente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txfDataNascimentoDependente, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txfParentescoDependente, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAdicionarDependente)
                 .addContainerGap())
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(358, 358, 358)
+                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -479,28 +454,31 @@ public class CadastroServidor extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbNome2)
-                    .addComponent(jtxfNome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txfNomeServ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlbSiaepi2)
-                    .addComponent(jtxfSiaepi2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txfSiaepi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbCargo)
                     .addComponent(txfCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel86)
-                    .addComponent(txfDataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txfDataEmissaoCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel87)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txfDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txfDataNascimentoServ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel88)
-                        .addComponent(txfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txfNaturalidadeServ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4)
+                        .addComponent(CaixaSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cbDeficienteFisico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel90, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel90)
+                        .addComponent(txfDeficienteFisico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel89)
-                    .addComponent(txfEstadoCivil))
+                    .addComponent(txfEstadoCivilServ, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
@@ -530,13 +508,13 @@ public class CadastroServidor extends javax.swing.JFrame {
                             .addComponent(jLabel98)
                             .addComponent(txfCtps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel99)
-                            .addComponent(txfSerie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txfSerieCtps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel100)
-                            .addComponent(txfEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txfDataEmissaoCtps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel101)
-                            .addComponent(txfPasep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txfnumPisPasep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel102)
                             .addComponent(txfDataCadastroPasep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -550,15 +528,15 @@ public class CadastroServidor extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel106))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txfTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txfNumTituloServ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel107)
-                        .addComponent(txfSecaoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txfNumSecaoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel108)
                         .addComponent(txfZonaTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel109)
-                    .addComponent(txfCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txfNumCpfServ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel110)
                     .addComponent(txfCertMilitar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -586,9 +564,11 @@ public class CadastroServidor extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(txfParentescoDependente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAdicionarDependente))
-                .addGap(38, 38, 38)
-                .addComponent(btnSalvar)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalvar)
+                    .addComponent(jButton1))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         jScrollPane4.setViewportView(jPanel4);
@@ -602,45 +582,75 @@ public class CadastroServidor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jScrollPane4MouseEntered
 
-    private void cbDeficienteFisicojCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbDeficienteFisicojCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbDeficienteFisicojCheckBox1ActionPerformed
-
-    private void txfEstadoCiviljTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfEstadoCiviljTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txfEstadoCiviljTextField5ActionPerformed
-
-    private void jtxfNome2jtxfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxfNome2jtxfNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxfNome2jtxfNomeActionPerformed
-
-    private void txfDataNascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfDataNascimentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txfDataNascimentoActionPerformed
-
-    private void txfNaturalidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfNaturalidadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txfNaturalidadeActionPerformed
-
-    private void txfNumeroDaCasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfNumeroDaCasaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txfNumeroDaCasaActionPerformed
-
-    private void txfTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfTelefoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txfTelefoneActionPerformed
-
-    private void txfUFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfUFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txfUFActionPerformed
-
-    private void txfSerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfSerieActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txfSerieActionPerformed
-
-    private void txfDataNascimentoDependenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfDataNascimentoDependenteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txfDataNascimentoDependenteActionPerformed
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        // POSSIVEL CAGADA AQUI, QUALQUER COISA APAGAR!!!
+        // POSSIVEL CAGADA AQUI, QUALQUER COISA APAGAR!!!
+        // POSSIVEL CAGADA AQUI, QUALQUER COISA APAGAR!!!
+        // POSSIVEL CAGADA AQUI, QUALQUER COISA APAGAR!!!
+            servidor = new Servidor();
+            
+            servidor.setGrauInstrucaoServ(txfGrauDeInstrucao.getText());
+            servidor.setAreaFormacaoServ(txfAreaDeFormacao.getText());
+            servidor.setNomeServ(txfNomeServ.getText());
+            servidor.setSIAPE(txfSiaepi.getText());
+            servidor.setDataNascServ(txfDataNascimentoServ.getText());
+            servidor.setEstadoCivilServ(txfEstadoCivilServ.getText());
+            servidor.setNaturalidadeServ(txfNaturalidadeServ.getText());
+            servidor.setDeficinteFisico(txfDeficienteFisico.getText()); // <<<<<<------ Mudar para combobox
+            servidor.setNomePaiServ(txfNomePai.getText());
+            servidor.setNomeMaeServ(txfNomeMae.getText());
+            servidor.setCargoServ(txfCargo.getText());
+            servidor.setDataAdmissaoServ(txfDataEmissaoCargo.getText());
+            
+            servidor.setSerieCtpsServ(Long.parseLong(txfSerieCtps.getText()));
+            servidor.setDataEmissaoCtpsServ(txfDataEmissaoCtps.getText());
+            servidor.setNumPisPasepServ(Long.parseLong(txfnumPisPasep.getText()));
+            servidor.setDataCadastroPisPasepServ(txfDataCadastroPasep.getText());
+            servidor.setIdentidadeServ(Long.parseLong(txfIdentidade.getText()));
+            servidor.setOrgaoIdentidadeServ(txfOrgao.getText());
+            servidor.setDataEmissaoIdentidadeServ(txfDataEmissaoIdentidade.getText());
+            servidor.setNumTituloServ(Long.parseLong(txfNumTituloServ.getText()));
+            servidor.setNumSessaoTituloServ(Long.parseLong(txfNumTituloServ.getText()));
+            servidor.setZonaTituloServ(txfZonaTitulo.getText());
+            servidor.setNumCpfServ(txfNumCpfServ.getText());
+            servidor.setCertMilitarServ(Long.parseLong(txfCertMilitar.getText()));
+            
+            //Pegando dados para a classe endereco
+            endereco = new Endereco();
+            
+            endereco.setUF(txfUF.getText());
+            endereco.setCidade(txfCidade.getText());
+            endereco.setBairro(txfBairro.getText());
+            endereco.setNumero(Integer.parseInt(txfNumeroDaCasa.getText()));
+            endereco.setRua(txfRua.getText());
+            endereco.setEmail(txfEmail.getText());
+            endereco.setTelefone(txfTelefone.getText());
+            
+            
+            //Pegando dependentes para a classe dependentes
+            dependentes = new Dependentes();
+            
+            dependentes.setNomeDependente(txfNomeDependente.getText());
+            dependentes.setDataNascimentoDependente(txfDataNascimentoDependente.getText());
+            dependentes.setParentesco(txfParentescoDependente.getText());
+ 
+        try {
+            //Pegando dados para a classe servidor
+            sDao.salvar(servidor);
+            JOptionPane.showMessageDialog(this, "Servidor inserido");  
+            
+            
+            /// POSSIVEIS ERROS ABAIXO
+            /// POSSIVEIS ERROS ABAIXO
+            /// POSSIVEIS ERROS ABAIXO
+            /// POSSIVEIS ERROS ABAIXO
+            
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Deu ruim");  
+        }
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -678,10 +688,11 @@ public class CadastroServidor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> CaixaSexo;
     private javax.swing.JButton btnAdicionarDependente;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JCheckBox cbDeficienteFisico;
     private javax.swing.JLabel imgIfpiLogo2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
@@ -700,6 +711,7 @@ public class CadastroServidor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel114;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
@@ -726,39 +738,40 @@ public class CadastroServidor extends javax.swing.JFrame {
     private javax.swing.JLabel jlbCargo;
     private javax.swing.JLabel jlbNome2;
     private javax.swing.JLabel jlbSiaepi2;
-    private javax.swing.JTextField jtxfNome2;
-    private javax.swing.JTextField jtxfSiaepi2;
     private javax.swing.JTextField txfAreaDeFormacao;
     private javax.swing.JTextField txfBairro;
     private javax.swing.JTextField txfCargo;
     private javax.swing.JTextField txfCertMilitar;
     private javax.swing.JTextField txfCidade;
-    private javax.swing.JTextField txfCpf;
     private javax.swing.JTextField txfCtps;
     private javax.swing.JTextField txfDataCadastroPasep;
-    private javax.swing.JTextField txfDataEmissao;
+    private javax.swing.JTextField txfDataEmissaoCargo;
+    private javax.swing.JTextField txfDataEmissaoCtps;
     private javax.swing.JTextField txfDataEmissaoIdentidade;
-    private javax.swing.JTextField txfDataNascimento;
     private javax.swing.JTextField txfDataNascimentoDependente;
+    private javax.swing.JTextField txfDataNascimentoServ;
+    private javax.swing.JTextField txfDeficienteFisico;
     private javax.swing.JTextField txfEmail;
-    private javax.swing.JTextField txfEmissao;
-    private javax.swing.JTextField txfEstadoCivil;
+    private javax.swing.JTextField txfEstadoCivilServ;
     private javax.swing.JTextField txfGrauDeInstrucao;
     private javax.swing.JTextField txfIdentidade;
-    private javax.swing.JTextField txfNaturalidade;
+    private javax.swing.JTextField txfNaturalidadeServ;
     private javax.swing.JTextField txfNomeDependente;
     private javax.swing.JTextField txfNomeMae;
     private javax.swing.JTextField txfNomePai;
+    private javax.swing.JTextField txfNomeServ;
+    private javax.swing.JTextField txfNumCpfServ;
+    private javax.swing.JTextField txfNumSecaoTitulo;
+    private javax.swing.JTextField txfNumTituloServ;
     private javax.swing.JTextField txfNumeroDaCasa;
     private javax.swing.JTextField txfOrgao;
     private javax.swing.JTextField txfParentescoDependente;
-    private javax.swing.JTextField txfPasep;
     private javax.swing.JTextField txfRua;
-    private javax.swing.JTextField txfSecaoTitulo;
-    private javax.swing.JTextField txfSerie;
+    private javax.swing.JTextField txfSerieCtps;
+    private javax.swing.JTextField txfSiaepi;
     private javax.swing.JTextField txfTelefone;
-    private javax.swing.JTextField txfTitulo;
     private javax.swing.JTextField txfUF;
     private javax.swing.JTextField txfZonaTitulo;
+    private javax.swing.JTextField txfnumPisPasep;
     // End of variables declaration//GEN-END:variables
 }

@@ -18,19 +18,22 @@ public class Login {
     int id;
     long senha;
     String login;
+    String email;
 
     public Login() {
     }
 
-    public Login(int id, long senha, String login) {
+    public Login(int id, long senha, String login, String email) {
         this.id = id;
         this.senha = senha;
         this.login = login;
+        this.email = email;
     }
 
-    public Login(long senha, String login) {
+    public Login(long senha, String login, String email) {
         this.senha = senha;
         this.login = login;
+        this.email = email;
     }
 
     public int getId() {
@@ -57,9 +60,17 @@ public class Login {
         this.login = login;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
+        int hash = 5;
         return hash;
     }
 
@@ -83,9 +94,9 @@ public class Login {
 
     @Override
     public String toString() {
-        return "Login{" + "id=" + id + ", senha=" + senha + ", login=" + login + '}';
+        return "Login{" + "id=" + id + ", senha=" + senha + ", login=" + login + ", email=" + email + '}';
     }
-    
+
     
     
 }

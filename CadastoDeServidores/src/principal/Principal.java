@@ -5,7 +5,7 @@
  */
 package principal;
 
-import dao.ServidorDao;
+import dao.ServidorDAO;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -39,7 +39,7 @@ public class Principal {
                 s1.setSexoServ('M');
                 s1.setDeficinteFisico("Não");
                 
-                ServidorDao servDAO = new ServidorDao();
+                ServidorDAO servDAO = new ServidorDAO();
                 servDAO.begin();
                 servDAO.salvar(s1);
                 
