@@ -12,54 +12,53 @@ import model.Servidor;
  *
  * @author Lord Devil Hunter
  */
-<<<<<<< HEAD:CadastoDeServidores/src/dao/ServidorDao.java
-public class ServidorDao {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Servidor");
-=======
 public class ServidorDAO {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("trabalho-finalPRO");
->>>>>>> 8c1ed5adc20c26068b1979b163e1852948e1a90b:CadastoDeServidores/src/dao/ServidorDAO.java
-        
-        EntityManager em = emf.createEntityManager();
-        
-        public void begin(){
-            em.getTransaction().begin();
-        }
-        
-        public void commit(){
-            em.getTransaction().commit();
-        }
-        public void rollback(){
-            em.getTransaction().rollback();
-        }
-        
-        public void close(){
-            em.close();
-            emf.close();
-        }
-        
-        public void salvar(Servidor s){
-            em.persist(s);
-        }
-        public Servidor pesquisar(long id){
-            return em.find(Servidor.class, id);
-        }
-        public void apagar(Servidor s){
-            begin();
-            em.persist(s);
-            commit();
-        }
-        public void atualizar(Servidor s){
-            begin();
-            em.merge(s);
-            commit();
-        }
-        
-        public List<Servidor> listar(){
-            List<Servidor> ls = new ArrayList<Servidor>();
-            Query query = em.createQuery("select s from Servidor s");
-            return ls = query.getResultList();
-        }
-        
-        
+
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("Servidor");
+
+    EntityManager em = emf.createEntityManager();
+
+    public void begin() {
+        em.getTransaction().begin();
+    }
+
+    public void commit() {
+        em.getTransaction().commit();
+    }
+
+    public void rollback() {
+        em.getTransaction().rollback();
+    }
+
+    public void close() {
+        em.close();
+        emf.close();
+    }
+
+    public void salvar(Servidor s) {
+        em.persist(s);
+    }
+
+    public Servidor pesquisar(long id) {
+        return em.find(Servidor.class, id);
+    }
+
+    public void apagar(Servidor s) {
+        begin();
+        em.remove(s);
+        commit();
+    }
+
+    public void atualizar(Servidor s) {
+        begin();
+        em.merge(s);
+        commit();
+    }
+
+    public List<Servidor> listar() {
+        List<Servidor> ls = new ArrayList<Servidor>();
+        Query query = em.createQuery("select s from Servidor s");
+        return ls = query.getResultList();
+    }
+
 }

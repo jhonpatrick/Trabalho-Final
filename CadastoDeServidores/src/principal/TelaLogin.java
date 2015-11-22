@@ -5,12 +5,9 @@
  */
 package principal;
 
-import javax.persistence.Entity;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import dao.LoginDAO;
 import javax.swing.JOptionPane;
-import login.Login;
+import model.Login;
 
 /**
  *
@@ -22,26 +19,7 @@ public class TelaLogin extends javax.swing.JFrame {
      * Creates new form Login
      */
     Login login;
-
-//    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("Servidor");
-//    private EntityManager em = emf.createEntityManager();
-//
-//    public void begin() {
-//        em.getTransaction().begin();
-//    }
-//
-//    public void commit() {
-//        em.getTransaction().commit();
-//    }
-//
-//    public void rollback() {
-//        em.getTransaction().rollback();
-//    }
-//
-//    public void close() {
-//        emf.close();
-//        em.close();
-//    }
+    LoginDAO logDAO = new LoginDAO();
 
     public TelaLogin() {
         initComponents();
@@ -58,19 +36,31 @@ public class TelaLogin extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txfLogin = new javax.swing.JTextField();
-        txfSenha = new javax.swing.JTextField();
+        txfEmail = new javax.swing.JTextField();
         btnConfirmar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        txtSenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
+        jLabel1.setFont(new java.awt.Font("Nirmala UI Semilight", 2, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Login: ");
 
+        jLabel2.setFont(new java.awt.Font("Nirmala UI Semilight", 2, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Senha: ");
 
+        txfEmail.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 14)); // NOI18N
+        txfEmail.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txfEmail.setToolTipText("DIGITE SEU LOGIN");
+        txfEmail.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(51, 255, 204), new java.awt.Color(204, 255, 255)));
+        txfEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        btnConfirmar.setFont(new java.awt.Font("Nirmala UI", 2, 14)); // NOI18N
+        btnConfirmar.setForeground(new java.awt.Color(51, 204, 0));
+        btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/accept.png"))); // NOI18N
         btnConfirmar.setText("CONFIRMAR");
         btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,86 +68,81 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Nirmala UI", 2, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/user_add.png"))); // NOI18N
         jButton1.setText("CADASTRAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel3.setText("Login invalido");
-
-        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel4.setText("Senha invalida");
+        txtSenha.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 14)); // NOI18N
+        txtSenha.setToolTipText("DIGITE SUA SENHA");
+        txtSenha.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 255, 204), new java.awt.Color(204, 255, 255)));
+        txtSenha.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnConfirmar)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jButton1))
-                        .addComponent(txfSenha)
-                        .addComponent(txfLogin)))
-                .addGap(46, 46, 46))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnConfirmar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1))
+                    .addComponent(txfEmail)
+                    .addComponent(txtSenha))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(95, 95, 95)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addGap(8, 8, 8)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel2)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConfirmar)
                     .addComponent(jButton1))
-                .addContainerGap())
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
-        jLabel3.setVisible(false);
-        jLabel4.setVisible(false);
+        txtSenha.getAccessibleContext().setAccessibleName("");
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
         // TODO add your handling code here:
-        //begin();
-        login = new Login();
-        login.setLogin(txfLogin.getText());
-        long senha = Long.parseLong(txfSenha.getText());
-        login.setSenha(senha);
-        if (txfLogin.getText().equals("")) {
-            if (senha < 8) {
-                JOptionPane.showMessageDialog(null, "Senha muito pequena");
-            } else {
-                login.setSenha(senha);
-            }
+        
+        String email = txfEmail.getText();
+        //login = logDAO.pesquisar();
+        JOptionPane.showMessageDialog(null, "Deu Certo!");
+        if(login == null){
             
         }
-        else{
-            setVisible(false);
-            BemVindo vindo = new BemVindo();
-            vindo.setVisible(true);
-        }
-
     }//GEN-LAST:event_btnConfirmarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        CadastroServidor cadastroServ = new CadastroServidor();
+        cadastroServ.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,9 +185,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField txfLogin;
-    private javax.swing.JTextField txfSenha;
+    private javax.swing.JTextField txfEmail;
+    private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
 }

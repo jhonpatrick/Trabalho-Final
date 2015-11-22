@@ -3,40 +3,43 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package login;
+package model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author Lord Devil Hunter
  */
 @Entity
-
 public class Login {
     @Id
     @GeneratedValue
     int id;
     long senha;
-    String login;
     String email;
+    //declaração entre as entidades
+    @OneToOne
+    Servidor servidor;
 
     public Login() {
+        super();
     }
 
-    public Login(int id, long senha, String login, String email) {
+    public Login(Servidor servidor, int id, long senha, String email) {
         this.id = id;
         this.senha = senha;
-        this.login = login;
         this.email = email;
+        this.servidor = servidor;
     }
 
-    public Login(long senha, String login, String email) {
+    public Login(Servidor servidor, long senha, String email) {
         this.senha = senha;
-        this.login = login;
         this.email = email;
+        this.servidor = servidor;
     }
 
     public int getId() {
@@ -47,20 +50,20 @@ public class Login {
         this.id = id;
     }
 
+    public Servidor getServidor() {
+        return servidor;
+    }
+
+    public void setServidor(Servidor servidor) {
+        this.servidor = servidor;
+    }
+
     public long getSenha() {
         return senha;
     }
 
     public void setSenha(long senha) {
         this.senha = senha;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
     }
 
     public String getEmail() {
@@ -97,9 +100,6 @@ public class Login {
 
     @Override
     public String toString() {
-        return "Login{" + "id=" + id + ", senha=" + senha + ", login=" + login + ", email=" + email + '}';
-    }
-
-    
-    
+        return "Login{" + "id= " + id + ", servidor= " + servidor + ", senha= " + senha + ", email= " + email + '}';
+    }   
 }
